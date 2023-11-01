@@ -6,7 +6,7 @@ export default function Home() {
     <main>
       <h1>Hello World!</h1>
       <Link href="users">Users</Link>
-        <ProductCard product={{name: "test", description: "Description"}} />
+      <ProductCard />
     </main>
-  )
+  );
 }
