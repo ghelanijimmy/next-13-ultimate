@@ -1,12 +1,10 @@
-'use client';
+"use client";
 
-type AddToCartProps = {
-
-};
+type AddToCartProps = {};
 export const AddToCart = (props: AddToCartProps) => {
-    return (
-        <div>
-            <button onClick={() => {}}>Add to Cart</button>
-        </div>
-    );
+  return (
+    <div>
+      <button onClick={() => {}}>Add to Cart</button>
+    </div>
+  );
 };
