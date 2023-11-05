@@ -1,46 +1,23 @@
 import { Metadata } from "next";
+import UserTable from "@/app/users/UserTable";
 
 export const metadata: Metadata = {
   title: "Users",
   description: "Users page",
 };
 
-type UsersPageProps = {};
+type UsersPageProps = {
+    searchParams: {
+        sortOrder: string;
+    }
+};
 
-interface User {
-  id: number;
-  name: string;
-  email: string;
-}
-const UsersPage = async (props: UsersPageProps) => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users", {
-    // cache: "no-store"
-    // next: {
-    //     revalidate: 10
-    // }
-  });
 
-  const users: User[] = await res.json();
-
+const UsersPage = async ({searchParams: {sortOrder}}: UsersPageProps) => {
   return (
     <div>
       <h1>Users</h1>
-      <table className="table table-bordered">
-          <thead>
-          <tr>
-              <th>Name</th>
-              <th>Email</th>
-          </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-              </tr>
-            ))}
-          </tbody>
-      </table>
+      <UserTable sortOrder={sortOrder} />
     </div>
   );
 };
