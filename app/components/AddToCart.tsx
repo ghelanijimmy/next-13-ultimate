@@ -4,7 +4,7 @@ type AddToCartProps = {};
 export const AddToCart = (props: AddToCartProps) => {
   return (
     <div>
-      <button onClick={() => {}}>Add to Cart</button>
+      <button className="btn btn-primary" onClick={() => {}}>Add to Cart</button>
     </div>
   );
 };
