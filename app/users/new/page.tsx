@@ -1,12 +1,19 @@
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "New User",
-  description: "New User Page",
-};
+import { useRouter } from "next/navigation";
 
 const NewUserPage = () => {
-  return <div>New User Page</div>;
+  const router = useRouter();
+  return (
+    <button
+      onClick={() => {
+        router.push("/users");
+      }}
+      className="btn btn-primary"
+    >
+      Create
+    </button>
+  );
 };
 
 export default NewUserPage;
